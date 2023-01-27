@@ -1,0 +1,15 @@
+.entriesDiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 33px;
+}
+
+.entriesDiv div {
+    background-color: rgb(237, 228, 193);
+    width: 220px;
+    max-width: 220px;
+    padding-bottom: 20px;
+}

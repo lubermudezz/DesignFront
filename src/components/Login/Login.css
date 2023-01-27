@@ -1,0 +1,22 @@
+
+
+.loginDiv form{
+    border: solid 2px black;
+    border-radius: 2%;
+    width: 40%;
+    margin: auto;
+    padding-bottom: 60px;
+    padding-top: 30px;
+    background-color: antiquewhite;
+}
+
+
+.loginDiv form {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-top: 15%;
+    gap: 34px;
+}

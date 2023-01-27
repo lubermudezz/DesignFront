@@ -1,0 +1,25 @@
+.tasksDivArr{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 47px;
+}
+
+.tasksDivArr div{
+    background-color: rgb(237, 228, 193);
+    width: 19%;
+    margin-bottom: 29px;}
+
+.tasksDivAll{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6%;}
+
+.tasksDivAll div {
+    background-color: rgb(237, 228, 193);
+    width: 21%;
+    margin-bottom: 29px;
+    padding-bottom: 20px;
+    max-width: 21%;
+}

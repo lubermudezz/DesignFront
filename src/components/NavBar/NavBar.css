@@ -1,0 +1,11 @@
+.navDiv{
+    background-color: rgb(237, 228, 193);
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+}
