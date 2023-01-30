@@ -90,7 +90,7 @@ export function approveEntry(id){
     return async function() {
         try {
             let res = await axios.put(`/entries/approve/${id}`)
-            console.log('approved')
+            alert('Entry approved')
         } catch (error) {
             console.log(error)
         }
@@ -153,16 +153,3 @@ export function getTimesheet (user_id) {
     }
 }
 
-// export function getMonthTimesheet (user_id, code) {
-//     return async function (dispatch) {
-//         try {
-//             let res = await axios.get(`/tasks/myEntries/${user_id}/${code}`)
-//             return dispatch ({
-//                 type: GET_TIMESHEET,
-//                 payload: res.data
-//             })
-//         } catch (error) {
-//             console.log(error)
-//         }
-//     }
-// }

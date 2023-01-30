@@ -1,8 +1,10 @@
-import { ar } from 'date-fns/locale'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { editEntry, getTimesheet } from '../../redux/actions'
+import Navbar from '../NavBar/Navbar'
+import './EditEntry.css'
+
 
 const EditEntry = () => {
   const user_id = JSON.parse(localStorage.usuario).id
@@ -40,12 +42,16 @@ const EditEntry = () => {
 
   return (
     <div>
-        <form onSubmit={(e) => handleSubmit(e)}>
-            
+      <Navbar/>
+        <form className='editForm' onSubmit={(e) => handleSubmit(e)}>
+            <h2>Edit your entry:</h2>
             <select  onChange={(e) => handleChange(e)}>
                 <option value="">Choose entry</option>
                 {Array.isArray(entries)?entries.map(e => {
+                  if(e.approved !== true) {
                     return <option key={e.id} value={e.id}>hs: {e.hours} c: {e.comment}</option>
+                  }
+                    
                 }):null}
             </select>
             <input onChange={(e) => handleChange(e)} type="number" placeholder='please enter hours' name='hours'/>
