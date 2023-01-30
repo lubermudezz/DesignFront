@@ -11,7 +11,7 @@ import DateFnsUtils from '@date-io/date-fns';
 
 
 
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://designback-production.up.railway.app/" || "http://localhost:3001";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
