@@ -8,7 +8,7 @@ const Navbar = () => {
 
  const handleClick = () => {
     localStorage.removeItem('usuario')
-    window.location.replace("https://designback-production.up.railway.app" || "http://localhost:3001")
+    window.location.replace("https://design-front.vercel.app/" || "http://localhost:3000")
 }
 
   return (
