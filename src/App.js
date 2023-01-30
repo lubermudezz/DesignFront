@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
 import Entries from './components/Entries/Entries';
 import UserEntries from './components/UserEntries/UserEntries';
+import EditEntry from './components/EditEntry/EditEntry';
 
 
 function App() {
@@ -15,8 +16,8 @@ function App() {
       <Routes>
       <Route exact path='/entries' element={<Entries></Entries>}/>
       <Route exact path='/myEntries' element={<UserEntries/>}/>
-
       <Route path='/' element={localStorage.getItem('usuario') ? <Projects/> : <Login/>}></Route>
+      <Route path='/edit' element={<EditEntry/>}/>
 
       </Routes>
 

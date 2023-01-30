@@ -6,18 +6,23 @@ import axios from 'axios'
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './redux/store/index.js';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
 
 
-axios.defaults.baseURL = "http://localhost:3000";
+
+axios.defaults.baseURL = "http://localhost:3001";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <MuiPickersUtilsProvider utils={DateFnsUtils} >
   <Provider store={store}>
  
     <App />
 
   </Provider>
+  </MuiPickersUtilsProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,0 +1,26 @@
+.timeDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 16px;
+    justify-content: center;
+    margin: 5px;}
+
+.timeViewDiv {
+    display: flex;
+    background-color: rgb(237, 228, 193);
+    border: 1px solid black;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
+    width: 22%;
+    border-radius: 1%;
+    max-width: 22%;
+}
+
+.selectTime {
+    text-align: center;
+    margin-right: 16px;
+    background-color: cornsilk;
+    padding: 5px;}

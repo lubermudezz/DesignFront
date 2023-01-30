@@ -1,3 +1,4 @@
+import { Box, Modal, Typography } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllProjects, getMyEntries } from '../../redux/actions'
@@ -7,10 +8,10 @@ const ProjectView = () => {
   const dispatch = useDispatch()
   const projects = useSelector(state => state.projects)
   const[render, setRender] = useState('none')
+  let hours = 0
   let userId = JSON.parse(localStorage.usuario).id
 
-
-
+ 
   const handleClick = (e) => {
     let project_id = e.target.name
     dispatch(getMyEntries(userId, project_id))
@@ -19,6 +20,7 @@ const ProjectView = () => {
   }
 
   const myEntries = useSelector(state => state.myentries)
+  console.log(myEntries)
 
 
   useEffect(() => {
@@ -36,8 +38,10 @@ const ProjectView = () => {
         })}
         </div> : 
 
-        <div className='projectViewDiv'>
+        <div >
+          <div className='projectViewDiv'>
         {Array.isArray(myEntries)?myEntries.map((e) => {
+          hours = hours + Number(e.hours)
             return <div key={e.id}> 
                 <h2>Project: {e.project.name}</h2>
                 <h3>Task: {e.task.name}</h3>
@@ -47,6 +51,8 @@ const ProjectView = () => {
                 {e.approved ? null : <button>Edit my entry</button>}
             </div>
         }): <div>No entries</div>}
+      </div>
+        <span>Total amount of hours: {hours}</span>
         </div>
     }
 

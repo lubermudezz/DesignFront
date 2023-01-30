@@ -6,6 +6,7 @@ export const GET_TASKS = 'TASKS'
 export const GET_MY_ENTRIES = 'GET_MY_ENTRIES'
 export const GET_ALL_TASKS= 'GET_ALL_TASKS'
 export const GET_MY_TASKS = 'GET_MY_TASKS'
+export const GET_TIMESHEET = 'GET_TIMESHEET'
 
 export function getAllProjects () {
     return async function (dispatch) {
@@ -21,14 +22,16 @@ export function login (userName) {
     return async function (dispatch) {
         try {
            let res = await axios.get(`/users/login/${userName}`)
-           localStorage.setItem('usuario', JSON.stringify(res.data))
-           window.location.reload()
+           if(res.data !== '') {localStorage.setItem('usuario', JSON.stringify(res.data))
+           window.location.reload()}
+            else alert(`user doesn't exist`)
+
            return  dispatch({
                 type: LOGIN,
                 payload: res.data
-            }) 
+            })
         } catch (error) {
-         console.log(error)   
+         console.log(error)
         }
     }
 }
@@ -38,7 +41,7 @@ export function getTasks (project_id) {
         try{
             let res = await axios.get(`/tasks/${project_id}`)
             return dispatch ({
-                type: GET_TASKS, 
+                type: GET_TASKS,
                 payload: res.data
             })
         }catch(err) {
@@ -52,6 +55,17 @@ export function postEntry(data) {
         try {
             let res = await axios.post(`/entries`, data)
             console.log('done')
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export function editEntry(id, edit) {
+    return async function () {
+        try {
+            let response = await axios.put(`/entries/edit/${id}`, edit)
+            alert('Entry modified correctly')
         } catch (error) {
             console.log(error)
         }
@@ -124,3 +138,31 @@ export function getMyTasks (task_id, user_id) {
         }
     }
 }
+
+export function getTimesheet (user_id) {
+    return async function (dispatch) {
+        try {
+            let res = await axios.get(`/tasks/myEntries/${user_id}`)
+            return dispatch ({
+                type: GET_TIMESHEET,
+                payload: res.data
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+// export function getMonthTimesheet (user_id, code) {
+//     return async function (dispatch) {
+//         try {
+//             let res = await axios.get(`/tasks/myEntries/${user_id}/${code}`)
+//             return dispatch ({
+//                 type: GET_TIMESHEET,
+//                 payload: res.data
+//             })
+//         } catch (error) {
+//             console.log(error)
+//         }
+//     }
+// }

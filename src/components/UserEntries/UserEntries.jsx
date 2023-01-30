@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navbar from '../NavBar/Navbar'
 import ProjectView from '../ProjectView/ProjectView'
 import TaskView from '../TaskView/TaskView'
+import TimeView from '../TimeView/TimeView'
 import './UserEntries.css'
 
 const UserEntries = () => {
@@ -42,6 +43,7 @@ const UserEntries = () => {
         :
         <div>
             <h1>Timesheet</h1>
+            <TimeView/>
             <button name='back' onClick={(e) => handleClick(e)}>Go back</button>
         </div>
         }

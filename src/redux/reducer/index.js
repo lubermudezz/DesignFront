@@ -1,4 +1,4 @@
-import { GET_ALL_TASKS, GET_ENTRIES, GET_MY_ENTRIES, GET_MY_TASKS, GET_PROJECTS, GET_TASKS, LOGIN } from "../actions"
+import { GET_ALL_TASKS, GET_ENTRIES, GET_MY_ENTRIES, GET_MY_TASKS, GET_PROJECTS, GET_TASKS, GET_TIMESHEET, LOGIN } from "../actions"
 
 const initialState = {
     projects: [],
@@ -7,7 +7,8 @@ const initialState = {
     user: [],
     myentries: [],
     allTasks: [],
-    myTasks: []
+    myTasks: [],
+    myTimesheet: []
 }
 
 export default function rootReducer(state = initialState, action) {
@@ -46,6 +47,11 @@ export default function rootReducer(state = initialState, action) {
             return{
                 ...state,
                 myTasks: action.payload
+            }
+        case GET_TIMESHEET:
+            return{
+                ...state,
+                myTimesheet: action.payload
             }
         default: return state
     }

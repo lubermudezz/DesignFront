@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getTasks } from '../../redux/actions'
-import AddTime from '../AddTime'
+import AddTime from '../AddTime/AddTime'
 import './Card.css'
 
 const Card = ({name, description, project_id}) => {

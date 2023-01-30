@@ -28,6 +28,7 @@ const Entries = () => {
                 <p>Project: {e.project?.name}</p>
                 <p>Hours: {e.hours}</p>
                 <p>Comment: {e.comment}</p>
+                <p>Date: {e.date.slice(0, [10])}</p>
                 {e.approved ? <p>STATUS: Approved</p> : <button type='submit' name={e.id} onClick={(el) => handleApprove(el)}>Approve entry</button>}
             </div>
         })}
