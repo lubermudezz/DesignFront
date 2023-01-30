@@ -2,6 +2,9 @@
 
 - Application for time reporting. Users are able to report how much time they spent working on a task.
 
+## Access online:
+- https://design-front.vercel.app/ 
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -26,7 +29,7 @@ The page will reload when you make changes.\
 ## Get Started:
 
 - You can login with a username. 
-  - 'user 1' will let you use the application as a common user. 
+  - 'test' will let you use the application as a common user. 
   - 'admin' will let you use the application as an admin. You'll be able to approve the user entries.
 
 
