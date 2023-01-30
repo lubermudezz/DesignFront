@@ -21,7 +21,7 @@ const Entries = () => {
         <Navbar/>
         <h1>All entries:</h1>
         <div className='entriesDiv'>
-        {entries?.map(e => {
+        {Array.isArray(entries)?entries.map(e => {
             return <div key={e.id}>
                 <p>User: {e.user?.userName}</p>
                 <p>Task: {e.task?.name}</p>
@@ -31,7 +31,7 @@ const Entries = () => {
                 <p>Date: {e.date.slice(0, [10])}</p>
                 {e.approved ? <p>STATUS: Approved</p> : <button type='submit' name={e.id} onClick={(el) => handleApprove(el)}>Approve entry</button>}
             </div>
-        })}
+        }): <div>No entries</div> }
         </div>
 
     </div>
