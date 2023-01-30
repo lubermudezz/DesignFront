@@ -4,9 +4,7 @@ import { login } from '../../redux/actions'
 import '../Login/Login.css'
 
 const Login = () => {
-
     const dispatch = useDispatch()
-    const usuario = useSelector(state => state.user)
  
     const [user, setUser] = useState({
         userName: ''

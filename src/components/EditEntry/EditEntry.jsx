@@ -11,7 +11,6 @@ const EditEntry = () => {
   const entries = useSelector(state => state.myTimesheet)
   const [id, setId] = useState('')
 
-// console.log(entries)
   const [edit, setEdit] = useState({
     comment: '',
     hours: ''
@@ -50,8 +49,7 @@ const EditEntry = () => {
                 {Array.isArray(entries)?entries.map(e => {
                   if(e.approved !== true) {
                     return <option key={e.id} value={e.id}>hs: {e.hours} c: {e.comment}</option>
-                  }
-                    
+                  }  
                 }):null}
             </select>
             <input onChange={(e) => handleChange(e)} type="number" placeholder='please enter hours' name='hours'/>

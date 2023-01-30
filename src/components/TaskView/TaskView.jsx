@@ -21,7 +21,6 @@ const TaskView = () => {
 
   }
 
-
   useEffect(() => {
     dispatch(getAllTasks())
   }, [dispatch])

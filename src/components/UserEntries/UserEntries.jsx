@@ -24,7 +24,6 @@ const UserEntries = () => {
         <button onClick={(e) => handleClick(e)}>Weekly / Monthly View</button>
         <button name='project' onClick={(e) => handleClick(e)}>Project View</button>
         <button name='tasks' onClick={(e) => handleClick(e)}>Task View</button>
-
         </div>
         :
         render === 'project' ? 

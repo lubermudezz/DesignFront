@@ -13,9 +13,6 @@ useEffect(() => {
 },[dispatch])
 
 const projects = useSelector(state => state.projects)
-console.log(projects)
-
-
 
   return (
     <div>
